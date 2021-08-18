@@ -10,16 +10,26 @@
 
 body {
   width: 100vw;
-  height: 100vh;
+  padding: 1rem;
+  min-height: 100vh;
   box-sizing: border-box;
   font-family: 'Nunito Sans', sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 1050px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 h1 {
+  text-align: center;
   color: #162425;
   position: relative;
 }
@@ -38,6 +48,8 @@ h1::after {
 }
 
 .v-card {
+  cursor: pointer;
+  margin: 5rem 0;
   perspective: 150rem;
   -moz-perspective: 150rem;
   position: relative;
@@ -66,20 +78,25 @@ h1::after {
   background-size: cover;
 }
 
-.v-card:hover .v-card__side--front {
+.v-card.show-back .v-card__side--front {
   transform: rotateY(-180deg);
 }
 
-.v-card:hover .v-card__side--back {
+.v-card.show-back .v-card__side--back {
   transform: rotateY(0deg);
 }
 
 .v-card__side--back {
   transform: rotateY(180deg);
   width: 100%;
-  height: 100%;
+  min-height: 100%;
   background: url(./img/vcard-back.png);
   background-size: cover;
+}
+
+.btn-box {
+  margin: 0 auto;
+  width: fit-content;
 }
 
 a {
@@ -118,8 +135,8 @@ a:active {
   background-color: #162425;
   position: relative;
   margin-left: 1rem;
-  width: 36px;
-  height: 36px;
+  width: 38px;
+  height: 38px;
   transition: all 0.4s;
 }
 
@@ -176,8 +193,19 @@ a:hover .download {
 }
 
 @media screen and (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
   .v-card {
     width: 420px;
     height: 240px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .v-card {
+    width: 315px;
+    height: 180px;
   }
 }
