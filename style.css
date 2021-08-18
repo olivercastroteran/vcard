@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+  font-family: 'Nunito Sans', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+h1 {
+  color: #162425;
+  position: relative;
+}
+
+h1::after {
+  content: '';
+  position: absolute;
+  top: 103%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 5rem;
+  height: 3px;
+  border-radius: 3px;
+  background-color: #162425;
+  display: inline-block;
+}
+
+.v-card {
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  position: relative;
+  width: 1050px;
+  height: 600px;
+}
+
+.v-card__side {
+  width: 100%;
+  height: 100%;
+  transition: all 0.8s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  box-shadow: 16px 16px 32px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.v-card__side--front {
+  width: 100%;
+  height: 100%;
+  background: url(./img/vcard-front.png);
+  background-size: cover;
+}
+
+.v-card:hover .v-card__side--front {
+  transform: rotateY(-180deg);
+}
+
+.v-card:hover .v-card__side--back {
+  transform: rotateY(0deg);
+}
+
+.v-card__side--back {
+  transform: rotateY(180deg);
+  width: 100%;
+  height: 100%;
+  background: url(./img/vcard-back.png);
+  background-size: cover;
+}
+
+a {
+  color: #162425;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: bold;
+  letter-spacing: 1px;
+  padding: 0.5rem;
+  border: 1px solid #162425;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.4s;
+}
+
+a span {
+  margin-left: 1rem;
+}
+
+a:hover {
+  transform: scale(1.05);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+a:active {
+  transform: scale(1);
+  box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.15);
+}
+
+.btn__icon {
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #162425;
+  position: relative;
+  margin-left: 1rem;
+  width: 36px;
+  height: 36px;
+  transition: all 0.4s;
+}
+
+.btn__icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+a:hover .btn__icon {
+  background-color: #fff;
+  transition: all 0.4s;
+}
+
+a:hover {
+  background-color: #162425;
+  color: #fff;
+}
+
+.download {
+  fill: #fff;
+  transition: all 0.4s;
+}
+
+a:hover .download {
+  fill: #162425;
+}
+
+@media screen and (max-width: 1200px) {
+  .v-card {
+    width: 945px;
+    height: 540px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .v-card {
+    width: 840px;
+    height: 480px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .v-card {
+    width: 735px;
+    height: 420px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .v-card {
+    width: 525px;
+    height: 300px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .v-card {
+    width: 420px;
+    height: 240px;
+  }
+}
