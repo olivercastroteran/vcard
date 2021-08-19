@@ -78,6 +78,10 @@ h1::after {
   background-size: cover;
 }
 
+.v-card__side--front.apex {
+  background: url(./img/apex/apex-front.png);
+}
+
 .v-card.show-back .v-card__side--front {
   transform: rotateY(-180deg);
 }
@@ -92,6 +96,10 @@ h1::after {
   min-height: 100%;
   background: url(./img/vcard-back.png);
   background-size: cover;
+}
+
+.v-card__side--back.apex {
+  background: url(./img/vcard-back.png);
 }
 
 .btn-box {
