@@ -60,6 +60,7 @@ h1::after {
 .v-card__side {
   width: 100%;
   height: 100%;
+  border-radius: 2rem;
   transition: all 0.8s ease;
   position: absolute;
   top: 0;
